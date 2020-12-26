@@ -16,6 +16,9 @@ public class Offer44 {
                 n -= count;
                 digit += 1;
                 start *= 10;
+                //需要注意的是如果digit和start都是int类型可能会发生溢出
+                //因为表达式最大类型是int，那结果就会先用int类型保存，再赋值给count
+                //这里start是long类型，结果会用long类型保存再赋值给count
                 count = digit * start * 9;
             }
             long num = start + (n - 1) / digit; // 2.
